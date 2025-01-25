@@ -1,0 +1,25 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/eyefridge
+    username: sa
+    passsword:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      #create 애플리케이션 실행 시점에 테이블을 drop 하고, 다시 생성한다.
+      #none은 drop 안함
+      ddl-auto: create
+    properties:
+      hibernate:
+        #      show_sql: true
+        format_sql: true
+
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace
